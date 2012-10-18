@@ -136,7 +136,7 @@ protected
         callback = lambda{
           code = ""
           for key in opts[:locals].keys
-            code << "#{key} = opts[:locals][:#{key}]\n"
+            code << "@#{key} = opts[:locals][:#{key}]\n"
           end
           eval code
           binding
