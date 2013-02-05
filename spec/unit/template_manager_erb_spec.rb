@@ -48,7 +48,7 @@ describe "AutomateIt::TemplateManager::ERB" do
   it "should render with local variables" do
     @d.should_receive(:_exists?).once.with(@source).and_return(true)
     @d.should_receive(:_exists?).once.with(@target).and_return(false)
-    @d.should_receive(:_read).once.with(@source).and_return("hello <%=entity%>")
+    @d.should_receive(:_read).once.with(@source).and_return("hello <%=@entity%>")
     @d.should_receive(:_write).once.with(@target, "hello world").and_return(true)
 
     @a.render(@source, @target, :locals => {:entity => "world"}).should be_true
