@@ -29,7 +29,7 @@ class AutomateIt::AddressManager::Portable < AutomateIt::AddressManager::BaseDri
 
   # See AddressManager#addresses
   def addresses
-    results = Set.new("127.0.0.1")
+    results = Set.new(["127.0.0.1"])
     results.merge(TCPSocket.gethostbyname(Socket.gethostname)[3]) rescue SocketError
     return results.flatten
   end
