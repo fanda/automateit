@@ -1,10 +1,10 @@
 module InactiveSupport
-  # Provides accurate date and time measurements using Date#advance and 
+  # Provides accurate date and time measurements using Date#advance and
   # Time#advance, respectively. It mainly supports the methods on Numeric,
   # such as in this example:
   #
   #   1.month.ago       # equivalent to Time.now.advance(:months => -1)
-  class Duration < BasicObject
+  class Duration < ActiveSupport::BasicObject
     attr_accessor :value, :parts
 
     def initialize(value, parts) #:nodoc:

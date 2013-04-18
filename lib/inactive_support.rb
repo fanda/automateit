@@ -40,11 +40,14 @@ class Hash
   include InactiveSupport::CoreExtensions::Hash::Keys
 end
 
-require 'inactive_support/basic_object' # Ruby 1.9 compatibility
+# since used with rails, this is conflict
+#require 'inactive_support/basic_object' # Ruby 1.9 compatibility
 require 'inactive_support/duration' # adds dates
+
 require 'inactive_support/core_ext/time/conversions' # to_formatted_s
 class Time
   include InactiveSupport::CoreExtensions::Time::Conversions
 end
 
-require 'inactive_support/clean_logger' # cleans up Logger output
+
+#require 'inactive_support/clean_logger' # cleans up Logger output

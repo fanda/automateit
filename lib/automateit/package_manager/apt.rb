@@ -15,7 +15,9 @@ class AutomateIt::PackageManager::APT < AutomateIt::PackageManager::DPKG
       # apt-get options:
       # -y : yes to all queries
       # -q : no interactive progress bars
-      cmd = "export DEBIAN_FRONTEND=noninteractive; apt-get install -y -q "+list.join(" ")+" < /dev/null"
+      cmd = "export DEBIAN_FRONTEND=noninteractive; apt-get"
+      cmd << " -t #{opts[:backports]}" if opts[:backports]
+      cmd << " install -y -q "+list.join(" ")+" < /dev/null"
       cmd << " > /dev/null" if opts[:quiet]
       cmd << " 2>&1"
 
