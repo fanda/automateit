@@ -43,7 +43,8 @@ class AutomateIt::ServiceManager::SYSV < AutomateIt::ServiceManager::BaseDriver
 
   # See ServiceManager#tell
   def tell(service, action, opts={})
-    return _run_command(["#{ETC_INITD}/#{service}", action.to_s], opts)
+    sudo = opts[:sudo] ? 'sudo' : ''
+    return _run_command(["#{sudo} #{ETC_INITD}/#{service}", action.to_s], opts)
   end
 
   # See ServiceManager#running?
@@ -58,7 +59,7 @@ class AutomateIt::ServiceManager::SYSV < AutomateIt::ServiceManager::BaseDriver
         true
       when :stopped?
         false
-      else 
+      else
         raise ArgumentError.new("unknown kind argument: #{kind}")
       end
 
