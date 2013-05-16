@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2013-05-16}
   s.description = %q{AutomateIt is an open source tool for automating the setup and maintenance of servers, applications and their dependencies. This is updated fork.}
   s.email = %q{fandisek@gmail.com}
-  s.homepage = %q{http://rubygems.org/gems/better-automateit}
+  s.homepage = %q{http://rubygems.org/gems/automate-it}
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{Fork of AutomateIt}
   s.bindir = 'bin'

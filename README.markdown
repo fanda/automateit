@@ -1,4 +1,7 @@
-== AutomateIt
+Automate-It
+===========
+
+This is fork of [AutomateIt](https://github.com/automateit/automateit).
 
 <em>AutomateIt is an open source tool for automating the setup and maintenance of servers, applications and their dependencies.</em>
 
@@ -6,14 +9,29 @@
 2. Screenshots[http://AutomateIt.org/screenshots] -- quick tour of sample AutomateIt code
 3. TUTORIAL.txt[link:files/TUTORIAL_txt.html] -- hands-on tutorial
 
-=== Frequently-used commands
+
+Installation
+------------
+
+As rubygem
+
+    gem install automate-it
+
+In Gemfile
+
+    gem 'automate-it', :require => 'automateit'
+
+
+Frequently-used commands
+------------------------
 
 Execute these from a terminal, use <tt>--help</tt> option for help:
 * +automateit+ or +ai+ -- Run a recipe or create a project.
 * +aitag+ -- Query project's tags.
 * +aifield+ -- Query project's fields.
 
-=== Frequently-used classes
+Frequently-used classes
+-----------------------
 
 * AutomateIt::Interpreter -- Runs AutomateIt commands.
 * AutomateIt::Project -- Collection of related recipes, tags, fields and custom plugins.
@@ -29,7 +47,8 @@ Execute these from a terminal, use <tt>--help</tt> option for help:
 * AutomateIt::TagManager -- Groups hosts by role and queries membership.
 * AutomateIt::TemplateManager -- Renders templates to files.
 
-=== Legal
+Legal
+-----
 
 Copyright (C) 2007-2008 Igal Koshevoy (igal@pragmaticraft.com)
 
