@@ -8,7 +8,7 @@ module AutomateIt
   class CLI < Common
     # Create a new CLI interpreter. If no :recipe or :eval option is provided,
     # it starts an interactive IRB session for the Interpreter.
-    # 
+    #
     # Examples:
     #   AutomateIt::CLI.run("myrecipe.rb")
     #   AutomateIt::CLI.run(:recipe => "myrecipe.rb")
@@ -50,7 +50,7 @@ module AutomateIt
         opts[:irb] = irb
         IRB.conf[:MAIN_CONTEXT] = irb.context
         interpreter = AutomateIt.new(opts)
-        irb.context.workspace.instance_variable_set(:@binding, interpreter.send(:binding))
+        irb.context.workspace.instance_variable_set(:@binding, interpreter.instance_eval { binding() })
 
         # Tab completion
         message = "<CTRL-D> to quit"
@@ -71,7 +71,7 @@ module AutomateIt
           irb.context.prompt_s = "ai%l "
           irb.context.prompt_c = "ai* "
           begin
-            irb.context.prompt_n = "ai%i " 
+            irb.context.prompt_n = "ai%i "
           rescue NoMethodError
             # Not available on Ruby 1.8.2 bundled with Mac OS X 10.4 Tiger
           end
