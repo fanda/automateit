@@ -1,5 +1,7 @@
 # == TemplateManager::BaseDriver
-#
+
+require 'ostruct'
+
 # Base class for all TemplateManager drivers.
 class AutomateIt::TemplateManager::BaseDriver < AutomateIt::Plugin::Driver
   # Name of default algorithm for performing checks, e.g., :compare
@@ -133,15 +135,7 @@ protected
       if opts[:locals]
         # Create a binding that the template can get variables from without
         # polluting the Driver's namespace.
-        callback = lambda{
-          code = ""
-          for key in opts[:locals].keys
-            code << "#{key} = opts[:locals][:#{key}]\n"
-          end
-          eval code
-          binding
-        }
-        binder = callback.call
+        binder = OpenStruct.new(opts[:locals]).instance_eval { binding }
       end
 
       block_opts = {
