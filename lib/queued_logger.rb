@@ -1,4 +1,4 @@
-require 'logger'
+require 'inactive_support/clean_logger'
 
 class QueuedLogger < Logger
   def initialize(*args)

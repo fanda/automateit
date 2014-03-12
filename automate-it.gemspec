@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name               = "automate-it"
-  s.version            = '0.9.1'
+  s.version            = '0.9.2'
   s.default_executable = "automateit"
   s.license            = 'GNU-GPL'
 
